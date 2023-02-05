@@ -21,7 +21,7 @@ Install NodeJS
 Edit .env files both client and server side on your own
 
 !!! Important !!! Change secret key in .env server file AND MAKE IT SECRET PLEASE!
-
+!!! Important !!! Create folder static in server folder
 Now your server fully configured and ready for users wave.
 
 # Site Management
