@@ -1,0 +1,60 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+
+.AnimeFilter {
+    height: max-content;
+    display: flex;
+    width: 100%;
+    background-color: white;
+}
+
+.AnimeFilter_w {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    margin-bottom: 20px;
+}
+
+.block_body {
+    padding: 15px;
+}
+
+.block_header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: #343a40;
+    span {
+        font-weight: 500;
+        margin-left: 15px;
+        color: white;
+        font-size: 20px;
+    }
+}
+
+.AnimeFilter_btn {
+    height: 40px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    border: none;
+    background-color: $light_red;
+    &:focus {
+        outline: 2px solid #ff5d5778;;    
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.divider {
+    margin-bottom: 10px;
+    strong {
+        font-size: 18px;
+    }
+}

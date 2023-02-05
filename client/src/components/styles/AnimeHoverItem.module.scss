@@ -1,0 +1,118 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+
+.AnimeHoverModal {
+    display: none;
+    padding: 12px;
+    position: absolute;
+    margin-left: 10px;
+    width: 450px;
+    background-color: white;
+    border: 1px solid #888;
+    hr {
+        border-top: 0.5px solid rgb(200, 200, 200);
+        margin-bottom: 10px;
+    }
+    &:hover {
+        cursor: default;
+    }
+}
+
+.AnimeHoverModal_ReadMore {
+    display: flex;
+    width: 150px;
+    height: 210px;
+}
+
+.ModalAnime_title {
+    margin-top: 3px;
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    color: $light_red;
+    margin-bottom: 8px;
+    text-overflow: ellipsis;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.ModalAnime_japanese_title {
+    font-weight: 300;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.ModalAnime_japan_title {
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.ModalAnime_button {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: whitesmoke;
+    box-shadow: 1px 2px 0px #c8c8c8;
+    text-decoration: none;
+    margin-bottom: 20px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.ModalAnime_description {
+    margin-bottom: 18px;
+    font-weight: 300;
+    font-size: 16px;
+    color: black;
+}
+
+.open {
+    display: block;
+}
+
+.close_animation {
+    animation: close_animation 1s ease 0.4s 1 normal;
+}
+
+.StatsRenderer_flex {
+    font-size: 16px;
+    display: flex;
+    margin-bottom: 12px;
+    .StatsRenderer_left {
+        width: 35%;
+        font-weight: 300;
+        color: $light_gray
+    }
+    .StatsRenderer_right {
+        width: 65%;
+        color: $dark_gray;
+        a {
+            color: $light_red;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+@keyframes close_animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (min-width:360px) and (max-width: 450px){
+    .AnimeHoverModal_ReadMore {
+        width: 90px;
+        height: 120px;
+    }
+}

@@ -1,0 +1,45 @@
+.Footer {
+    margin-top: 20px;
+    height: 40px;
+    background-color: rgb(50, 52, 63);
+    width: 100%;
+
+}
+
+.Footer_w {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Footer_links {
+    display: flex;
+    list-style-type: none;
+    li {
+        margin-right: 20px;
+    }
+    li a {
+        transition: 0.5s;
+        text-decoration: none;
+        color: rgb(202, 202, 202);
+        &:hover {
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
+@media (min-width: 360px) and (max-width: 780px) {
+    .Footer_links {
+        display: none;
+    }
+}
+
+.Footer_copyright {
+    color: rgb(202, 202, 202);
+}
+
+.Footer_designby {
+    font-size: 10px;
+    color: rgba(202, 202, 202, 0.445);
+}

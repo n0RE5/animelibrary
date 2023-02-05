@@ -1,0 +1,25 @@
+.TagsRenderer_tags {
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    a {
+        color:#444;
+        &:hover {
+            color:#AAA;
+        }
+    }
+}
+
+.differ {
+    margin: 0 8px;
+}
+
+.differ_right {
+    margin-right: 8px;
+}
+
+@media (min-width: 360px) and (max-width: 600px) {
+    .tags {
+        display: none;
+    }
+}

@@ -1,0 +1,47 @@
+.search_form {
+    display: flex;
+    align-items: center;
+    input {
+        height: 60px;
+        width: 100%;
+        border: 1px solid rgb(217, 217, 217);
+        font-size: 18px;
+        background-color: whitesmoke;
+        border-radius: 10px;
+        padding-left: 20px;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: rgb(155, 155, 155);
+        }
+    }
+    button {
+        height: 40px;
+        width: 40px;
+        background: url("../../assets/svg/search.svg") no-repeat center;
+        background-size: cover;
+        border: none;
+        margin-left: -100px;
+        opacity: 0.6;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 360px) and (max-width: 1000px) {
+    .search_form {
+        button {
+            margin-left: -50px;
+        }
+    }
+}
+
+.input_error {
+    input {
+        &::placeholder {
+            color: red;
+        }
+    }
+}

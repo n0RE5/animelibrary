@@ -1,0 +1,45 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+$border: 1px solid rgb(233, 233, 233);
+
+.StatsRenderer_flex {
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 14px;
+    .StatsRenderer_left {
+        width: 80%;
+        font-weight: 400;
+        color: #888;
+    }
+    .StatsRenderer_right {
+        width: 100%;
+        font-weight: 400;
+        color: $dark_gray;
+        a {
+            color: $light_red;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (min-width:360px) and (max-width:689px) {
+    .StatsRenderer_flex {
+        width: 100%;
+        .StatsRenderer_right {
+            text-align: end;
+        }
+    }
+}
+@media (min-width:690px) and (max-width:850px) {
+    .StatsRenderer_flex {
+        width: 80%;
+        .StatsRenderer_right {
+            width: 30%;
+        }
+    }
+}
