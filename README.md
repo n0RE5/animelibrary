@@ -1,6 +1,19 @@
 # DESCRIPTION
-This is fullstack REACT[frontend] and NodeJS[backend] Anime Website with registration system, rate system, favorite system and etc.
-Registration and protection system in based on JWT token.
+This is fullstack REACT[frontend] and NodeJS[backend] Anime Website with JTW based AUTH system, RATING system, FAVORITE system and etc.
+Project technologies [PERN stack]:
+  ! Frontend:
+    - React
+    - Redux
+    - TypeScript
+  ! Backend:
+    - NodeJS
+    - PostgreSQL
+    - ExpressJS
+    (NodeJS libraries)
+    - JWT
+    - BCrypt
+    - Sequelize
+    - cors
 # START SERVER
 ### `npm run dev`
 # START CLIENT
