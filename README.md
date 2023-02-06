@@ -1,11 +1,11 @@
 # DESCRIPTION
 This is fullstack REACT[frontend] and NodeJS[backend] Anime Website with JTW based AUTH system, RATING system, FAVORITE system and etc.
 Project technologies [PERN stack]:
-  ! Frontend:
+# Frontend:
     - React
     - Redux
     - TypeScript
-  ! Backend:
+# Backend:
     - NodeJS
     - PostgreSQL
     - ExpressJS
