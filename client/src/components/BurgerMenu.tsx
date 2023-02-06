@@ -21,7 +21,7 @@ const BurgerMenu: React.FC = () => {
 
     return (
         <div>
-            <a onClick={() => setActive(!active)} className={cl.join(' ')}>
+            <a onClick={() => setActive((prev) => !prev)} className={cl.join(' ')}>
                 <span></span>
                 <span></span>
                 <span></span>

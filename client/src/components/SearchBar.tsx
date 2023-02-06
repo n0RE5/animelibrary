@@ -21,7 +21,6 @@ const SearchBar: React.FC<SearchBarProps> = ({placeholder}) => {
         )
         if (searchResult.length === 1 && searchResult !== undefined) {
                 const exactPage = searchResult[0].page_name
-                console.log(searchResult)
                 return navigate(`/anime/${exactPage}`)
         }
         return navigate(`/search/?searchQuery=${searchValue}`)

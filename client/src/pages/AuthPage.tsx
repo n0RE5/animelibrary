@@ -32,7 +32,7 @@ function AuthPage() {
     }
 
     const authSwitch = () => {
-        setIsLoggingIn(!isLoggingIn)
+        setIsLoggingIn((prev) => !prev)
         setGotError(false)
     }
 

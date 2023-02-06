@@ -24,7 +24,6 @@ const AddAnimeList: React.FC = () => {
             if(!animeListId || !animeItemId || animeListId === 0 || animeItemId === 0) {
                 return setMessage("Не указан Идентификатор [ID] Списка или Идентификатор [ID] Аниме")
             }
-
             const res = await insertAnimeListItem(animeListId, animeItemId)
             setMessage(`Вы добавили Аниме с ID ${res.data.animeitemId} в Список #${res.data.animelistId}`)
         } catch (e: any) {
@@ -35,7 +34,6 @@ const AddAnimeList: React.FC = () => {
     const get = async () => {
         try {
             const res = await getAnimeFromList(animeListId)
-            console.log(res)
         } catch (e: any) {
             setMessage(e.response?.data?.message)
         }
@@ -46,7 +44,6 @@ const AddAnimeList: React.FC = () => {
             if(!animeItemId || animeItemId === 0) {
                 return setMessage("Не указан Идентификатор [ID] Аниме")
             }
-
             const res = await removeAnimeListItem(animeItemId)
             setMessage("Вы удалили аниме из списка")
         } catch (e: any) {

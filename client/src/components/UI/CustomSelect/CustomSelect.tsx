@@ -17,7 +17,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({output, setOutput, optionArr
     return (
         <div className={classes.form}>
             <div className={classes.__select} data-state={dataState}>
-                <div className={classes.__select__title} onClick={() => setDataState(!dataState)}>{output? output : placeholder}</div>
+                <div className={classes.__select__title} onClick={() => setDataState((prev) => !prev)}>{output? output : placeholder}</div>
                 <div className={classes.__select__content}>
                     <CustomOption setValue={setOutput} setDataState={setDataState} id={technicalName}>{null}</CustomOption>
                     {optionArray?.map((option, index) =>

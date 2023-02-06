@@ -33,7 +33,9 @@ function UserProfilePage() {
     }
 
     useEffect(() => setAnimeList([...animeList]), [userWatchList])
-    useEffect(() => { loadUserWatchList(user) }, [])
+    useEffect(() => { 
+        loadUserWatchList(user) 
+    }, [])
 
     const account =
     <div className={classes.UPP_body}>
