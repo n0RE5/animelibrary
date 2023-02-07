@@ -3,11 +3,26 @@ import AnimeScroller from '../components/AnimeScroller';
 import SearchBar from '../components/SearchBar';
 import AnimeFilter from '../components/AnimeFilter';
 import classes from './styles/MainPage.module.scss'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAnimeFromList } from '../http/animeAPI';
+import { useFetching } from '../hooks/useFetching';
+import { useEffect } from 'react';
 
 function MainPage() {
+    const dispatch = useDispatch()
     const animeList = useSelector((state: any) => state.globalList.animeList)
     const winterList = useSelector((state: any) => state.winterList.winterList)
+
+    const [fetchWinterList, isWinterListLoading, err] = useFetching( async () => {
+        const winterList = await getAnimeFromList(1)
+        return dispatch({type: "SET_WINTER_LIST", payload: winterList})
+    })
+    
+    useEffect(() => {
+        if(!winterList.length) {
+            fetchWinterList()
+        }
+    }, [])
 
     return (
         <div className={classes.MainPage_w}>
