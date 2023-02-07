@@ -11,9 +11,9 @@ export const getAnime = async(id: string) => {
     return response
 }
 
-export const getAnimeList = async (limit: number, page: number): Promise<AnimeItemI[]> => {
+export const getAnimeList = async (limit: number, page: number) => {
     const response = await $host.get(`api/anime?limit=${limit}&page=${page}`)
-    return response.data.rows
+    return response
 }
 
 export const createAnimeList = async (name: string) => {
