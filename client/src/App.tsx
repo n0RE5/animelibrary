@@ -14,21 +14,15 @@ function App() {
   // todo loading screen
   const dispatch = useDispatch()
   const [loading, setIsLoading] = useState(true);
-  const user = useSelector((state: any)=> state.userState.user);
+
   const [fetchList, isAnimeLoading, error] = useFetching( async () => {
     const animeList = await getAnimeList(10, 1)
-    console.log(animeList)
-    return dispatch({type: "SET_GLOBAL_LIST", payload: animeList})
+    return dispatch({type: "SET_GLOBAL_LIST", payload: animeList.data.rows})
   })
 
-  const [fetchWinterList, isWinterListLoading, err] = useFetching( async () => {
-    const winterList = await getAnimeFromList(1)
-    return dispatch({type: "SET_WINTER_LIST", payload: winterList})
-  })
 
   useEffect(() => { 
     fetchList()
-    fetchWinterList()
   }, [])
 
   useEffect(() => {
