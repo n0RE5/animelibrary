@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                             <Link to="/">Соглашение</Link>
                         </li>
                         <li>
-                            <Link to="/">Все аниме</Link>
+                            <Link to="/allanime">Все аниме</Link>
                         </li>
                         <li>
                             <span className={classes.Footer_designby}>desing by animego.org</span>

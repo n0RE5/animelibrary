@@ -16,9 +16,8 @@ const Navbar: React.FC = () => {
                     <div className={classes.Navbar_left}>
                         <div className={classes.Navbar_title}>ANILibrary</div>
                         <ul className={classes.Navbar_bar}>
-                            <li><Link to="">Аниме</Link></li>
-                            <li><Link to="">Топ 100</Link></li>
-                            <li><Link to="">Расписание</Link></li>
+                            <li><Link to="/">Аниме</Link></li>
+                            <li><Link to="/allanime">Топ 100</Link></li>
                             <li><Link to={`/search/?status=Онгоинг`}>Онгоинги</Link></li>
                         </ul>
                     </div>

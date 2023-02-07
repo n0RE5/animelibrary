@@ -5,8 +5,9 @@ import AuthPage from "./pages/AuthPage";
 import ErrorPage from "./pages/ErrorPage";
 import MainPage from "./pages/MainPage";
 import UserProfilePage from "./pages/UserProfilePage";
-import { ADMIN_ROUTE, ANILIBRARY_ROUTE, ANIME_ROUTE, ERROR_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, REGISTRATION_ROUTE, SEARCH_ROUTE } from "./utils/consts";
+import { ADMIN_ROUTE, ALL_ANIME_ROUTE, ANILIBRARY_ROUTE, ANIME_ROUTE, ERROR_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, REGISTRATION_ROUTE, SEARCH_ROUTE } from "./utils/consts";
 import AnimePage from "./pages/AnimePage";
+import AllAnimePage from "./pages/AllAnimePage";
 
 export const authRoutes = [
     {
@@ -35,6 +36,10 @@ export const publicRoutes = [
     {
         path: ERROR_ROUTE,
         Component: <ErrorPage/>
+    },
+    {
+        path: ALL_ANIME_ROUTE,
+        Component: <AllAnimePage/>
     },
     {
         path: SEARCH_ROUTE,
