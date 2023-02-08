@@ -1,4 +1,4 @@
-const {animelist_anime, animeitem, animelist} = require('../models/models')
+const {animelist_anime, animeitem, animelist, animeitem_stats} = require('../models/models')
 const ApiError = require('../error/apiError')
 
 class AnimeListItemController {
@@ -30,7 +30,7 @@ class AnimeListItemController {
 
     async getAll(req, res, next) {
         const animeListItems = await animelist_anime.findAndCountAll({
-            include: [{model: animeitem, as: 'animeitem'}]
+            include: [{model: animeitem, as: 'animeitem', include: [{model: animeitem_stats, as: "stats"}]}]
         })
         return res.json(animeListItems)
     }
@@ -39,7 +39,7 @@ class AnimeListItemController {
         const {animelistId} = req.params
         const animeListItem = await animelist_anime.findAndCountAll({
             where: {animelistId},
-            include: [{model: animeitem, as: 'animeitem'}]
+            include: [{model: animeitem, as: 'animeitem', include: [{model: animeitem_stats, as: "stats"}]}]
         })
         return res.json(animeListItem)
     }
