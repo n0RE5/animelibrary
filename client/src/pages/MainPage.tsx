@@ -6,21 +6,30 @@ import classes from './styles/MainPage.module.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimeFromList } from '../http/animeAPI';
 import { useFetching } from '../hooks/useFetching';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { AnimeItemI } from '../types/Global';
 
 function MainPage() {
     const dispatch = useDispatch()
-    const animeList = useSelector((state: any) => state.globalList.animeList)
+    const [animeList, setAnimeList] = useState<AnimeItemI[]>([])
     const winterList = useSelector((state: any) => state.winterList.winterList)
 
+    const [fetchAnimeList, isAnimeLoading, error] = useFetching( async () => {
+        const animelist = await getAnimeFromList(process.env.REACT_APP_MAIN_LIST)
+        setAnimeList(animelist)
+    })
+
     const [fetchWinterList, isWinterListLoading, err] = useFetching( async () => {
-        const winterList = await getAnimeFromList(1)
+        const winterList = await getAnimeFromList(process.env.REACT_APP_SEASON_LIST)
         return dispatch({type: "SET_WINTER_LIST", payload: winterList})
     })
-    
+
     useEffect(() => {
         if(!winterList.length) {
             fetchWinterList()
+        }
+        if(!animeList.length) {
+            fetchAnimeList()
         }
     }, [])
 
