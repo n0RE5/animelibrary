@@ -71,8 +71,13 @@ $border: 1px solid rgb(233, 233, 233);
     min-width: 250px;
 }
 
+.media_img {
+    width: 250px;
+    height: 350px;
+}
+
 .media_info {
-    width: 100%;
+    width: calc(100% - 270px);
     display: block;
     hr {
         border-top: 1px solid rgb(225, 225, 225);
@@ -148,7 +153,7 @@ $border: 1px solid rgb(233, 233, 233);
     margin-top: 10px;
     display: flex;
     width: 100%;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 @media (min-width: 360px) and (max-width: 689px) {
@@ -160,11 +165,11 @@ $border: 1px solid rgb(233, 233, 233);
         margin-bottom: 10px;
     }
     .media_info {
+        width: 100%;
         margin: 0;
     }
     .AnimePage_images {
         display: flex;
-        justify-content: center;
         :nth-child(2) {
             display: none;
         }
@@ -180,7 +185,10 @@ $border: 1px solid rgb(233, 233, 233);
 @media (min-width:690px) and (max-width: 1089px) {
     .AnimePage_images {
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
+        :only-child {
+            margin-right: 20px;
+        }
         :nth-child(3) {
             display: none;
         }
@@ -190,10 +198,27 @@ $border: 1px solid rgb(233, 233, 233);
     }
 }
 
-@media (min-width: 1090px) and (max-width: 1600px) {
+@media (min-width: 1090px) and (max-width: 1230px) {
     .AnimePage_images {
         display: flex;
         justify-content: space-between;
+
+        :nth-child(4) {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 1231px) and (max-width: 1600px) {
+    .AnimePage_images {
+        display: flex;
+        justify-content: left;
+        :only-child {
+            margin-right: 20px;
+        }
+        :nth-child(3) {
+            display: none;
+        }
         :nth-child(4) {
             display: none;
         }
