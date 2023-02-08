@@ -36,7 +36,9 @@ const AnimeSelf: React.FC<AnimeSelfProps> = ({animeItem}) => {
             <div className={classes.AnimePage}>
             <div className={classes.media_block_1}>
                 <div className={classes.media}>
-                    <BannerImage disabled src={process.env.REACT_APP_API_URL + animeItem.img} />
+                    <div className={classes.media_img}>
+                        <BannerImage disabled src={process.env.REACT_APP_API_URL + animeItem.img} />
+                    </div>
                     <div className={classes.media_panel}>
                         <Link to={``} className={[classes.btn__watch, classes.btn].join(' ')}><span>Смотреть онлайн</span></Link>
                         <button className={[classes.btn__comment, classes.btn].join(' ')}><span>Написать отзыв</span></button>
