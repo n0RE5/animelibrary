@@ -15,8 +15,6 @@ const WatchList: React.FC = () => {
                 <div className={classes.media_info_title}>Список аниме</div>
                 <div className={classes.media_info_description}>Вы отметили эти аниме как посмотреть позже</div>
                 <hr />
-                
-                <hr />
             </div>
             <div className={classes.anime_container}>
                 {userWatchList.length
