@@ -11,7 +11,7 @@ const WatchList: React.FC = () => {
     const dispatch = useDispatch();
     const userWatchList: AnimeItemI[] = useSelector((state: any) => state.userState.watchList);
 
-    const sortUserWatchlist = (sortedList: AnimeItemI) => {
+    const sortUserWatchlist = (sortedList) => {
         dispatch({type: "SET_WATCHLIST", payload: sortedList})
     }
 
