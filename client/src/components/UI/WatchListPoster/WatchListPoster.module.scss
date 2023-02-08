@@ -8,8 +8,9 @@ $border: 1px solid rgb(224, 224, 224);
 }
 
 .watchlist_remove {
-    margin-left: -20px;
+    margin-left: 200px;
     margin-top: -10px;
+    position: absolute;
     background-color: white;
     transition: all 0.3s ease-in-out;
     padding: 5px;
