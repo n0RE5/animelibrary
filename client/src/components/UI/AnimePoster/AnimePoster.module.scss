@@ -23,6 +23,8 @@ $dark_gray: #444;
     font-size: 20px;
     color: $light_red;
     margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
     &:hover {
         text-decoration: underline;

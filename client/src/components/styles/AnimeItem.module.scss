@@ -10,6 +10,8 @@ $dark_gray: #444;
 }
 
 .media_body {
+    height: 100%;
+    width: calc(100% - 150px);
     margin-left: 15px;
 }
 
@@ -50,5 +52,9 @@ $dark_gray: #444;
     }
     .media_body {
         margin-left: 10px;
+        width: calc(100% - 80px);
+    }
+    .AnimeItem_description {
+        display: none;
     }
 }

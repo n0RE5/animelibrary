@@ -1,13 +1,21 @@
 .TagsRenderer_tags {
     font-size: 18px;
     font-weight: 300;
-    display: flex;
+    line-height: 1.5;
+	overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space:pre-wrap;
     a {
         color:#444;
         &:hover {
             color:#AAA;
         }
     }
+}
+
+.tags {
+    display: inline;
 }
 
 .differ {
