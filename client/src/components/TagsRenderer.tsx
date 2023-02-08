@@ -12,18 +12,21 @@ const TagsRenderer: React.FC<TagsRendererProps> = ({animeItem, renderPassiveTags
 
     return (
         <div className={classes.TagsRenderer_tags}>
-            <Link to={`/search/?type=${animeItem.type}`}>{animeItem.type}</Link>
+            <span>
+                <Link to={`/search/?type=${animeItem.type}`}>{animeItem.type}</Link>
+            </span>
             <span className={classes.differ}>/</span>
-            <Link to={`/search/?year=${animeItem.year}`}>{animeItem.year}</Link>
+            <span>
+                <Link to={`/search/?year=${animeItem.year}`}>{animeItem.year}</Link>
+            </span>
             {renderPassiveTags && animeItem.genres.length
-                ?   <div className={classes.tags}>
+                ?   <span className={classes.tags}>
                         <span className={classes.differ}>/</span>
                         {animeItem.genres.split(' ').map(
                             (genre, index) =>
                                 <Link key={index} to={`/search/?genre=${genre}`} className={classes.differ_right}>{genre}</Link>
-
                         )}
-                    </div>
+                    </span>
                 : null
             }
         </div>

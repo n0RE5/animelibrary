@@ -29,8 +29,8 @@ const BurgerMenu: React.FC = () => {
             <div className={menuCl.join(' ')}>
                 <div className={classes.burgerModal_w}>
                     <Link onClick={() => setActive(false)} to='/'>Аниме</Link>
-                    <Link onClick={() => setActive(false)} to='/'>Топ 100</Link>
-                    <Link onClick={() => setActive(false)} to='/'>Расписание</Link>
+                    <Link onClick={() => setActive(false)} to='/allanime'>Топ 100</Link>
+                    <Link onClick={() => setActive(false)} to='/search/?status=Онгоинг'>Онгоинги</Link>
                     {isAuth
                         ?   <Link onClick={() => setActive(false)} to={'/profile'} className={classes.btn_login}><span>Аккаунт ({user.email})</span></Link>
 
