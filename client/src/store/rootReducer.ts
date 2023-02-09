@@ -1,12 +1,10 @@
-import { combineReducers } from "redux";
-import { allAnimeListReducer } from "./allAnimeListReducer";
-import { userReducer } from "./userReducer";
-import { winteListReducer } from "./winterListReducer";
+import { combineReducers } from "@reduxjs/toolkit";
+import globalListSlice from "./globalListSlice";
+import userSlice from "./userSlice";
 
 const reducer = combineReducers({
-    winterList: winteListReducer,
-    userState: userReducer,
-    globalList: allAnimeListReducer
+    userState: userSlice,
+    globalList: globalListSlice
 })
 
 export default reducer
