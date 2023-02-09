@@ -3,12 +3,13 @@ import AppRouter from './components/AppRouter';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import './assets/styles/App.scss'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { check } from './http/userAPI';
-import { getAnimeFromList, getAnimeList } from './http/animeAPI';
+import { getAnimeList } from './http/animeAPI';
 import { useFetching } from './hooks/useFetching';
-import { getUserWatchlist } from './http/watchlistAPI';
+import { setAuth, setUser } from './store/userSlice';
+import { setGlobalList } from './store/globalListSlice';
 
 function App() {
   // todo loading screen
@@ -17,9 +18,8 @@ function App() {
 
   const [fetchList, isAnimeLoading, error] = useFetching( async () => {
     const animeList = await getAnimeList(10, 1)
-    return dispatch({type: "SET_GLOBAL_LIST", payload: animeList.data.rows})
+    return dispatch(setGlobalList( animeList.data.rows))
   })
-
 
   useEffect(() => { 
     fetchList()
@@ -27,8 +27,8 @@ function App() {
 
   useEffect(() => {
     check().then((data: any) => {
-      dispatch({type: "SET_IS_AUTH", payload: true})
-      dispatch({type: "SET_USER", payload: data})
+      dispatch(setAuth(true))
+      dispatch(setUser(data))
     }).finally(() => setIsLoading(false))
   }, []);
 

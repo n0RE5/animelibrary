@@ -13,8 +13,8 @@ interface RateProps {
 const Rate: React.FC<RateProps> = ({animeItem}) => {
     const navigate = useNavigate()
     const [visible, setVisible] = useState<boolean>(false)
-    const userState = useSelector((state: any) => state.userState)
     const [rate, setRate] = useState<number>(0)
+    const userState = useSelector((state: any) => state.userState)
 
     const cl = [classes.stars]
 

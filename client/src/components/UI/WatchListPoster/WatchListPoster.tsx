@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromUserWatchlist } from '../../../http/watchlistAPI';
+import { setWatchlist } from '../../../store/userSlice';
 import { AnimeItemI, IUser } from '../../../types/Global';
 import AnimePoster from '../AnimePoster/AnimePoster';
 import classes from './WatchListPoster.module.scss'
@@ -31,7 +32,7 @@ const WatchListPoster: React.FC<WatchListPosterProps> = ({animeItem}) => {
 
     const filterWatchList = (id) => {
         const filtered = [...watchList].filter(item => item.id !== id)
-        return dispatch({type: "SET_WATCHLIST", payload: filtered})
+        return dispatch(setWatchlist(filtered))
     }
 
     const removeAnime = async () => {

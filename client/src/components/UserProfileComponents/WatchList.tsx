@@ -1,18 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from '../../pages/styles/UserProfilePage.module.scss'
+import { setWatchlist } from '../../store/userSlice';
 import { AnimeItemI } from '../../types/Global';
 import AnimeSort from '../AnimeSort';
 import WatchListPoster from '../UI/WatchListPoster/WatchListPoster';
 
 
 const WatchList: React.FC = () => {
-    //<AnimeSort animeList={animeList} setSortedList={setAnimeList} />
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const userWatchList: AnimeItemI[] = useSelector((state: any) => state.userState.watchList);
 
     const sortUserWatchlist = (sortedList) => {
-        dispatch({type: "SET_WATCHLIST", payload: sortedList})
+        dispatch(setWatchlist(sortedList))
     }
 
     return (

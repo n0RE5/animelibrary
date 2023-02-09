@@ -10,10 +10,10 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({placeholder}) => {
     const navigate = useNavigate();
-    const globalList: AnimeItemI[] = useSelector((state: any) => state.globalList.animeList)
     const [searchValue, setSearchValue] = useState<string>('')
     const [this_placeholder, setPlaceholder] = useState<string>(placeholder)
     const [rootClasses, setRootClasses] = useState<string[]>([classes.search_form])
+    const globalList: AnimeItemI[] = useSelector((state: any) => state.globalList.animeList)
 
     const searchExactOrRedirect = () => {
         const searchResult = [...globalList].filter(item => 

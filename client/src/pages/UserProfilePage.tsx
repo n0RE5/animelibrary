@@ -7,21 +7,21 @@ import WatchListPoster from '../components/UI/WatchListPoster/WatchListPoster';
 import WatchList from '../components/UserProfileComponents/WatchList';
 import { check } from '../http/userAPI';
 import { getUserWatchlist } from '../http/watchlistAPI';
+import { setAuth, setUser, setWatchlist } from '../store/userSlice';
 import { AnimeItemI, IUser } from '../types/Global';
 import classes from './styles/UserProfilePage.module.scss'
 
 function UserProfilePage() {
-
+    const navigate = useNavigate()
     const dispatch = useDispatch();
     const user: IUser = useSelector((state: any) => state.userState.user)
-    const navigate = useNavigate()
     const userWatchList: AnimeItemI[] = useSelector((state: any) => state.userState.watchList); 
 
     const logOut = () => {
         localStorage.removeItem('token')
-        dispatch({type: "SET_IS_AUTH", payload: false})
-        dispatch({type: "SET_USER", payload: {}})
-        dispatch({type: "SET_WATCHLIST", payload: []})
+        dispatch(setAuth(false))
+        dispatch(setUser({}))
+        dispatch(setWatchlist([]))
         navigate('/')
     }
 
@@ -29,7 +29,7 @@ function UserProfilePage() {
 
     const loadUserWatchList = async (user) => {
         const watchList = await getUserWatchlist(user.watchlistId)
-        dispatch({type: "SET_WATCHLIST", payload: watchList})
+        dispatch(setWatchlist(watchList))
     }
 
     useEffect(() => setAnimeList([...animeList]), [userWatchList])

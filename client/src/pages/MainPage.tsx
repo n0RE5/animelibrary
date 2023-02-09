@@ -12,7 +12,7 @@ import { AnimeItemI } from '../types/Global';
 function MainPage() {
     const dispatch = useDispatch()
     const [animeList, setAnimeList] = useState<AnimeItemI[]>([])
-    const winterList = useSelector((state: any) => state.winterList.winterList)
+    const [seasonList, setSeasonList] = useState<AnimeItemI[]>([])
 
     const [fetchAnimeList, isAnimeLoading, error] = useFetching( async () => {
         const animelist = await getAnimeFromList(process.env.REACT_APP_MAIN_LIST)
@@ -20,12 +20,12 @@ function MainPage() {
     })
 
     const [fetchWinterList, isWinterListLoading, err] = useFetching( async () => {
-        const winterList = await getAnimeFromList(process.env.REACT_APP_SEASON_LIST)
-        return dispatch({type: "SET_WINTER_LIST", payload: winterList})
+        const seasonlist = await getAnimeFromList(process.env.REACT_APP_SEASON_LIST)
+        setSeasonList(seasonlist)
     })
 
     useEffect(() => {
-        if(!winterList.length) {
+        if(!seasonList.length) {
             fetchWinterList()
         }
         if(!animeList.length) {
@@ -39,7 +39,7 @@ function MainPage() {
                 <SearchBar placeholder='Найти любимое аниме'/>
             </div>
             <div className={classes.AnimeScroller_divider}>
-                <AnimeScroller animeList={winterList}>Аниме зимнего сезона</AnimeScroller>
+                <AnimeScroller animeList={seasonList}>Аниме зимнего сезона</AnimeScroller>
             </div>
             <div className="contain">
                 <div className={classes.__flex}>

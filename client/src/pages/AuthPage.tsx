@@ -2,15 +2,16 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login, registration } from '../http/userAPI';
+import { setAuth, setUser } from '../store/userSlice';
 import classes from './styles/AuthPage.module.scss'
 
 function AuthPage() {
+    const dispatch = useDispatch()
     const [isLoggingIn, setIsLoggingIn] = useState<boolean>(true)
     const [gotError, setGotError] = useState<boolean>(false)
     const [errorMessage, setErrorMessage] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
-    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const auth = async (e: any) => {
@@ -22,8 +23,8 @@ function AuthPage() {
             } else {
                 data = await registration(email, password)
             }
-            dispatch({type:"SET_USER", payload: data})
-            dispatch({type:"SET_IS_AUTH", payload: true})
+            dispatch(setUser(data))
+            dispatch(setAuth(true))
             return navigate('/')
         } catch (e: any) {
             setGotError(true)
