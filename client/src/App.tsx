@@ -2,7 +2,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import './assets/styles/App.scss'
+import './styles/App.scss'
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { check } from './http/userAPI';
