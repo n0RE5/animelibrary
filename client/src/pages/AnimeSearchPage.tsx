@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { parseAndSearchGenres, parseAndSearchStats } from '../API/typeParsers';
+import { parseAndSearchGenres, parseAndSearchStats } from '../utils/typeParsers';
 import AnimeFilter from '../components/AnimeFilter';
 import AnimeList from '../components/AnimeList';
 import AnimeSort from '../components/AnimeSort';

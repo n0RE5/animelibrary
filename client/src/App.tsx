@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch()
   const [loading, setIsLoading] = useState(true);
 
-  const [fetchList, isAnimeLoading, error] = useFetching( async () => {
+  const [fetchList] = useFetching( async () => {
     const animeList = await getAnimeList(10, 1)
     return dispatch(setGlobalList( animeList.data.rows))
   })

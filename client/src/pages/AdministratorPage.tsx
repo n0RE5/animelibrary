@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import AddAnime from '../components/AdminComponents/AddAnime';
-import AnimeListManagement from '../components/AdminComponents/AnimeListManagement';
+import AddAnime from '../components/adminComponents/AddAnime';
+import AnimeListManagement from '../components/adminComponents/AnimeListManagement';
 import classes from './styles/AdministratorPage.module.scss'
 
 const welcomePage = () => {
