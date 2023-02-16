@@ -1,33 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import WatchList from '../components/userComponents/WatchList';
+import WatchList from './UserPages/WatchList';
 import { getUserWatchlist } from '../http/watchlistAPI';
 import { setAuth, setUser, setWatchlist } from '../store/userSlice';
 import { AnimeItemI, IUser } from '../types/Global';
 import classes from './styles/UserProfilePage.module.scss'
-
-const account = (user: IUser) => {
-    return(
-        <div className={classes.UPP_body}>
-            <div className={classes.media_info}>
-                <div className={classes.media_info_title}>Настройки аккаунта</div>
-                <div className={classes.media_info_description}>Здесь вы можете настроить дополнительные параметры для своего аккаунта</div>
-                <hr />
-            </div>
-            <div className={classes.settings}>
-                <div className={classes.settings_flex}>
-                    <span>Логин (email)</span>
-                    <div>{user.email}</div>
-                </div>
-                <div className={classes.settings_flex}>
-                    <span>Пароль </span>
-                    <div>********</div>
-                </div>
-            </div>
-        </div>
-    )
-}
+import Account from './UserPages/Account';
 
 function UserProfilePage() {
     const navigate = useNavigate()
@@ -63,7 +42,7 @@ function UserProfilePage() {
                 <div className={classes.UPP_sidebar}>
                     <div className={classes.sidebar_title}>Настройки</div>
                     <button onClick={() => setRenderedItem(<WatchList/>)} className={classes.switch_button}>Мои Аниме</button>
-                    <button onClick={() => setRenderedItem(account(user))} className={classes.switch_button}>Аккаунт</button>
+                    <button onClick={() => setRenderedItem(<Account/>)} className={classes.switch_button}>Аккаунт</button>
                     {user.role === 'ADMIN' 
                     ? <button onClick={() => navigate('/admin')} className={classes.switch_button}>Админпанель</button>
                     : null
