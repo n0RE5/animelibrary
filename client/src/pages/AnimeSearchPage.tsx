@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { parseAndSearchGenres, parseAndSearchStats } from '../utils/typeParsers';
+import { parseAndSearchGenres, parseAndSearchStats } from '../utils/TypeParsers';
 import AnimeFilter from '../components/AnimeFilter';
 import AnimeList from '../components/AnimeList';
 import AnimeSort from '../components/AnimeSort';
@@ -63,10 +63,10 @@ function AnimeSearchPage () {
                         <hr className={classes.hr} />
                         <AnimeSort animeList={filteredList} setSortedList={setFilteredList} />
                         <hr className={classes.hr} />
-                    </AnimeList>
-                    <div className={classes.AnimeFilterResult_Filter}>
-                        <AnimeFilter/>
-                    </div>
+                        </AnimeList>
+                        <div className={classes.AnimeFilterResult_Filter}>
+                            <AnimeFilter/>
+                        </div>
                 </div>
             }
         </div>
