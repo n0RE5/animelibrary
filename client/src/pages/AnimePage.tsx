@@ -14,12 +14,11 @@ function AnimePage() {
             }
             const searchResult = await getAnime(id.id)
 
-            if(searchResult.data !== null) {
-
-                return <AnimeSelf animeItem={searchResult.data} />
+            if(searchResult.data === null) {
+                return <Navigate to="/error" replace />
             }
 
-            return <Navigate to="/error" replace />
+            return <AnimeSelf animeItem={searchResult.data} />
         } catch (e) {
             console.log(e)
             return <Navigate to="/error" replace />
