@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
-import { IUser } from '../types/Global';
-
 
 const AppRouter: React.FC = () => {
     const isAuth: boolean = useSelector((state: any) => state.userState.isAuth)
