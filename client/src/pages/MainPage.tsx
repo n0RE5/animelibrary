@@ -14,12 +14,12 @@ function MainPage() {
     const [animeList, setAnimeList] = useState<AnimeItemI[]>([])
     const [seasonList, setSeasonList] = useState<AnimeItemI[]>([])
 
-    const [fetchAnimeList, isAnimeLoading, error] = useFetching( async () => {
+    const [fetchAnimeList] = useFetching( async () => {
         const animelist = await getAnimeFromList(process.env.REACT_APP_MAIN_LIST)
         setAnimeList(animelist)
     })
 
-    const [fetchWinterList, isWinterListLoading, err] = useFetching( async () => {
+    const [fetchWinterList] = useFetching( async () => {
         const seasonlist = await getAnimeFromList(process.env.REACT_APP_SEASON_LIST)
         setSeasonList(seasonlist)
     })
