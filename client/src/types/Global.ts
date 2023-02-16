@@ -34,7 +34,7 @@ export enum animeGenres {
 /* 
     User
 */
-export type IUser = {
+export interface IUser {
     id: number,
     email: string,
     role: string,
@@ -46,14 +46,14 @@ export type IUser = {
     Anime
 */
 
-export type AnimeStatsI = {
+export interface AnimeStatsI {
     stat_name: string,
     stat_value: string,
     stat_htmlTag: string,
     stat_link: string
 }
 
-export type AnimeItemI = {
+export interface AnimeItemI {
     id: number,
     page_name: string,
     img: string,
