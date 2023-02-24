@@ -1,48 +1,16 @@
-# DESCRIPTION
-This is fullstack REACT[frontend] and NodeJS[backend] Anime Website with JWT based AUTH system, RATING system, FAVORITE system and etc.
-Project technologies [PERN stack]:
-# Frontend:
-    - React
-    - Redux
-    - TypeScript
-# Backend:
-    - NodeJS
-    - PostgreSQL
-    - ExpressJS
-    (NodeJS libraries)
-    - JWT
-    - BCrypt
-    - Sequelize
-    - cors
-# START SERVER
-### `npm run dev`
-# START CLIENT
-### `npm start`
-# DEPENDS
-Setting UP:
+Animelibrary web application written with React (frontend) + NodeJS (backend)
 
-You will have to install NodeJS & React deps so after installation run
+Full application stack: PostgreSQL + ExpressJS + React + NodeJS [PERN stack]
 
-### `cs client`
+# Start Client (ver. dev)
+
+### `cd client`
 ### `npm i`
+### `npm start`
+
+# Start Server
 
 ### `cd server`
 ### `npm i`
+### npm run dev
 
-Install and configure PostgreSQL
-Install NodeJS
-Edit .env files both client and server side on your own
-
-!!! Important !!! Change secret key in .env server file AND MAKE IT SECRET PLEASE!
-!!! Important !!! Create folder static in server folder
-Now your server fully configured and ready for users wave.
-
-# Site Management
-
-Register yourself an account
-
-// THEN //
-
-Grant yourself Admin role in PGSQL
-
-And enjoy management :)
