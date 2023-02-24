@@ -12,5 +12,5 @@ Full application stack: PostgreSQL + ExpressJS + React + NodeJS [PERN stack]
 
 ### `cd server`
 ### `npm i`
-### npm run dev
+### `npm run dev`
 
