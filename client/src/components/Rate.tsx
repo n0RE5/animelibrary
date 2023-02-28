@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import starImg from '../assets/svg/star.svg'
 import { updateAnimeRating, rateAnime } from '../http/ratingAPI';
-import { AnimeItemI } from '../types/Global';
+import { AnimeItemI, IRootReducer } from '../types/Global';
 import classes from './styles/Rate.module.scss'
 
 interface RateProps {
@@ -14,7 +14,7 @@ const Rate: React.FC<RateProps> = ({animeItem}) => {
     const navigate = useNavigate()
     const [visible, setVisible] = useState<boolean>(false)
     const [rate, setRate] = useState<number>(0)
-    const userState = useSelector((state: any) => state.userState)
+    const userState = useSelector<IRootReducer, IRootReducer["userState"]>(state => state.userState)
 
     const cl = [classes.stars]
 

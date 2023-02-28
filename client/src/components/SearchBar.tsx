@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AnimeItemI } from '../types/Global';
+import { AnimeItemI, IRootReducer } from '../types/Global';
 import classes from './styles/SearchBar.module.scss'
 
 interface SearchBarProps {
@@ -13,7 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({placeholder}) => {
     const [searchValue, setSearchValue] = useState<string>('')
     const [this_placeholder, setPlaceholder] = useState<string>(placeholder)
     const [rootClasses, setRootClasses] = useState<string[]>([classes.search_form])
-    const globalList: AnimeItemI[] = useSelector((state: any) => state.globalList.animeList)
+    const globalList = useSelector<IRootReducer, AnimeItemI[]>(state => state.globalList.animeList)
 
     const searchExactOrRedirect = () => {
         const searchResult = [...globalList].filter(item => 

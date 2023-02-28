@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { IUser } from '../types/Global';
+import { IRootReducer, IUser } from '../types/Global';
 import classes from './styles/BurgerMenu.module.scss'
 
 const BurgerMenu: React.FC = () => {
-    const isAuth: boolean = useSelector((state: any) => state.userState.isAuth)
-    const user: IUser = useSelector((state: any) => state.userState.user)
+    const isAuth = useSelector<IRootReducer, boolean>(state => state.userState.isAuth)
+    const user = useSelector<IRootReducer, IUser>(state => state.userState.user)
     const [active, setActive] = useState<boolean>(false)
     const cl = [classes.burger]
     const menuCl = [classes.burgerModal]

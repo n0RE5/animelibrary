@@ -5,7 +5,6 @@ import Welcome from './AdminPages/Welcome';
 import classes from './styles/AdministratorPage.module.scss'
 
 function AdministratorPage() {
-
     const [renderedItem, setRenderedItem] = useState<React.ReactNode | JSX.Element>(<Welcome/>);
 
     return (

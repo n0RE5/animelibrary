@@ -2,14 +2,14 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import WatchListPoster from '../../components/UI/WatchListPoster/WatchListPoster';
 import AnimeSort from '../../components/AnimeSort';
-import { AnimeItemI } from '../../types/Global';
+import { AnimeItemI, IRootReducer } from '../../types/Global';
 import { setWatchlist } from '../../store/userSlice';
 import classes from '../styles/UserProfilePage.module.scss'
 
 
 const WatchList: React.FC = () => {
     const dispatch = useDispatch()
-    const userWatchList: AnimeItemI[] = useSelector((state: any) => state.userState.watchList);
+    const userWatchList = useSelector<IRootReducer, AnimeItemI[]>(state => state.userState.watchList);
 
     const sortUserWatchlist = (sortedList) => {
         dispatch(setWatchlist(sortedList))

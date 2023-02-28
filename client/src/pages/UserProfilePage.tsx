@@ -4,15 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import WatchList from './UserPages/WatchList';
 import { getUserWatchlist } from '../http/watchlistAPI';
 import { setAuth, setUser, setWatchlist } from '../store/userSlice';
-import { AnimeItemI, IUser } from '../types/Global';
+import { AnimeItemI, IRootReducer, IUser } from '../types/Global';
 import classes from './styles/UserProfilePage.module.scss'
 import Account from './UserPages/Account';
 
 function UserProfilePage() {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const user: IUser = useSelector((state: any) => state.userState.user)
-    const userWatchList: AnimeItemI[] = useSelector((state: any) => state.userState.watchList); 
+    const user = useSelector<IRootReducer, IUser>(state => state.userState.user)
+    const userWatchList = useSelector<IRootReducer, AnimeItemI[]>(state => state.userState.watchList); 
+    const [animeList, setAnimeList] = useState<AnimeItemI[]>(useSelector<IRootReducer, AnimeItemI[]>(state => state.globalList.animeList));
 
     const logOut = () => {
         localStorage.removeItem('token')
@@ -21,8 +22,6 @@ function UserProfilePage() {
         dispatch(setWatchlist([]))
         navigate('/')
     }
-
-    const [animeList, setAnimeList] = useState<AnimeItemI[]>(useSelector((state: any) => state.globalList.animeList));
 
     const loadUserWatchList = async (user) => {
         const watchList = await getUserWatchlist(user.watchlistId)

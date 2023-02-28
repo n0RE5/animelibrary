@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromUserWatchlist } from '../../../http/watchlistAPI';
 import { setWatchlist } from '../../../store/userSlice';
-import { AnimeItemI, IUser } from '../../../types/Global';
+import { AnimeItemI, IRootReducer, IUser } from '../../../types/Global';
 import AnimePoster from '../AnimePoster/AnimePoster';
 import classes from './WatchListPoster.module.scss'
 
@@ -13,8 +13,8 @@ interface WatchListPosterProps {
 const WatchListPoster: React.FC<WatchListPosterProps> = ({animeItem}) => {
     const [visible, setVisible] = useState<boolean>(false)
     const dispatch = useDispatch();
-    const user: IUser = useSelector((state: any) => state.userState.user);
-    const watchList: AnimeItemI[] = useSelector((state: any) => state.userState.watchList)
+    const user = useSelector<IRootReducer, IUser>(state => state.userState.user);
+    const watchList = useSelector<IRootReducer, AnimeItemI[]>(state => state.userState.watchList)
 
     const rootClasses = [classes.watchlist_remove]
 

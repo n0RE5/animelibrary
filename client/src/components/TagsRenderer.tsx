@@ -9,7 +9,6 @@ interface TagsRendererProps {
 }
 
 const TagsRenderer: React.FC<TagsRendererProps> = ({animeItem, renderPassiveTags = true}) => {
-
     return (
         <div className={classes.TagsRenderer_tags}>
             <span>

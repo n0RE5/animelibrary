@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AnimeItemI } from '../types/Global';
+import { AnimeItemI, IRootReducer } from '../types/Global';
 import BannerImage from './UI/BannerImage/BannerImage';
 import StatsRenderer from './StatsRenderer';
 import classes from './styles/AnimeSelf.module.scss'
@@ -18,7 +18,7 @@ const AnimeSelf: React.FC<AnimeSelfProps> = ({animeItem}) => {
     const navigate = useNavigate()
     const [visible, setVisible] = useState<boolean>(false)
     const [children, setChildren] = useState<React.ReactNode | null>() 
-    const userState = useSelector((state: any) => state.userState)
+    const userState = useSelector<IRootReducer, IRootReducer["userState"]>((state: any) => state.userState)
 
     const addToFavorite = async () => {
         try {

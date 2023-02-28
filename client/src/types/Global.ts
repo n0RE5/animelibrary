@@ -31,6 +31,21 @@ export enum animeGenres {
     genreHorror = "Хоррор"
 }
 
+/*
+    Store
+*/
+
+export interface IRootReducer {
+    userState: {
+        isAuth: boolean,
+        user: IUser,
+        watchList: AnimeItemI[]
+    }
+    globalList: {
+        animeList: AnimeItemI[]
+    }
+}
+
 /* 
     User
 */

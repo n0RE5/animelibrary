@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { parseAndSearchGenres, parseAndSearchStats } from '../utils/TypeParsers';
+import { parseAndSearchGenres, parseAndSearchStats } from '../utils/typeParsers';
 import AnimeFilter from '../components/AnimeFilter';
 import AnimeList from '../components/AnimeList';
 import AnimeSort from '../components/AnimeSort';
 import SearchBar from '../components/SearchBar';
-import { AnimeItemI } from '../types/Global';
+import { AnimeItemI, IRootReducer } from '../types/Global';
 import classes from './styles/AnimeSearchPage.module.scss'
 
 function AnimeSearchPage () {
 
-    const globalList: AnimeItemI[] = useSelector((state: any) => state.globalList.animeList)
+    const globalList = useSelector<IRootReducer, AnimeItemI[]>(state => state.globalList.animeList)
     const [searchIsNull, setSearchIsNull] = useState<boolean>(false)
     const [searchParmas] = useSearchParams()
 

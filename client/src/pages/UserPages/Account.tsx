@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { IUser } from '../../types/Global';
+import { IRootReducer, IUser } from '../../types/Global';
 import classes from '../styles/UserProfilePage.module.scss'
 
 const Account: React.FC = () => {
-    const user: IUser = useSelector((state: any) => state.userState.user)
+    const user = useSelector<IRootReducer, IUser>(state => state.userState.user)
 
     return (
         <div className={classes.UPP_body}>
