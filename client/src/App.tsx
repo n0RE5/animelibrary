@@ -10,20 +10,19 @@ import { getAnimeList } from './http/animeAPI';
 import { useFetching } from './hooks/useFetching';
 import { setAuth, setUser } from './store/userSlice';
 import { setGlobalList } from './store/globalListSlice';
-import { AnimeItemI } from './types/Global';
+import { AnimeItemI, IRootReducer } from './types/Global';
 
 function App() {
   const dispatch = useDispatch()
   const [loading, setIsLoading] = useState(true);
-  const globalList: AnimeItemI[] = useSelector((state: any) => state.globalList.animeList)
+  const globalList = useSelector<IRootReducer, AnimeItemI[]>(state => state.globalList.animeList)
 
   const [fetchList] = useFetching( async () => {
     const animeList = await getAnimeList(10, 1)
-    return dispatch(setGlobalList( animeList.data.rows))
+    return dispatch(setGlobalList(animeList.data.rows))
   })
 
   useEffect(() => {
-
     if (!globalList.length) {
       fetchList()
     }
@@ -32,20 +31,21 @@ function App() {
       dispatch(setAuth(true))
       dispatch(setUser(data))
     }).finally(() => setIsLoading(false))
-    
   }, []);
 
   return (
-    <Router>
-        <Navbar />
-        {loading
-        ? <div />
-        : <div className="content">
-            <AppRouter />
-          </div>
-        }
-        <Footer/>
-    </Router>
+    <div className="wrapper">
+      <Router>
+          <Navbar />
+          {loading
+          ? <div />
+          : <div className="content">
+              <AppRouter />
+            </div>
+          }
+          <Footer/>
+      </Router>
+    </div>
   );
 }
 
