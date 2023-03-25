@@ -1,0 +1,71 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+
+.AnimePoster_w {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.AnimePoster_img_w {
+    width: 150px;
+    height: 210px;
+}
+
+.AnimePoster_title {
+    margin-top: 3px;
+    font-weight: 500;
+    font-size: 20px;
+    color: $light_red;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.large {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.AnimePoster_w_wide {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    margin-top: 10px;
+    width: 220px;
+    margin-bottom: 40px;
+}
+
+.AnimePoster_img_w_wide {
+    width: 220px;
+    height: 300px;
+}
+
+.AnimePoster_title_wide {
+    margin-top: 3px;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 24px;
+    color: $light_red;
+    margin-bottom: 8px;
+    text-overflow: ellipsis;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.AnimePoster_jp {
+    font-size: 14px;
+    color:$light_gray;
+}

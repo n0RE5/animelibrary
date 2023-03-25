@@ -1,0 +1,39 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+
+.Error {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Error_404 {
+    display: block;
+    font-size: 64px;
+    font-weight: 700;
+    color: $light_red;
+    margin-bottom: 30px;
+}
+
+.Error_notFound {
+    font-size: 40px;
+    color: $dark_gray;
+    margin-bottom: 20px;
+}
+
+.Error_message {
+    width: 35%;
+    text-align: center;
+    color: $light_gray;
+    a {
+        text-decoration: none;
+        color: $light_red;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

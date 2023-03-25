@@ -1,0 +1,26 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+
+.ScrollPosters {
+    margin-top: 50px;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,.125);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.ScrollPosters_title {
+    font-weight: 500;
+    font-size: 32px;
+    color: $dark_gray;
+    margin-bottom: 20px;
+}
+
+.ScrollPosters_items {
+    height: auto;
+    display: flex;
+    gap: 16px;
+}

@@ -1,0 +1,63 @@
+.MainPage_w {
+    margin-top: 40px;
+}
+
+.__flex {
+    justify-content: space-between;
+    display: flex;
+    >:first-child {
+        margin-right: 40px;
+    }
+}
+
+.AnimeScroller_divider {
+    margin-bottom: 30px;
+}
+
+.AnimeList_filter {
+    width: 40%;
+}
+
+.AnimeList_title {    
+    font-weight: 500;
+    font-size: 32px;
+    color: black
+}
+
+@media (min-width: 600px) and (max-width: 979px) {
+    .__flex {
+        >:first-child {
+            margin: 0;
+        }
+    }
+    .MainPage_Searchbar {
+        margin-bottom: 30px;
+    }
+    .AnimeScroller_divider {
+        display: none;
+    }
+    .AnimeList_filter {
+        display: none;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 599px) {
+    .AnimeList_title {    
+        font-weight: 500;
+        font-size: 26px;
+    }
+    .__flex {
+        >:first-child {
+            margin: 0;
+        }
+    }
+    .MainPage_Searchbar {
+        margin-bottom: 30px;
+    }
+    .AnimeScroller_divider {
+        display: none;
+    }
+    .AnimeList_filter {
+        display: none;
+    }
+}

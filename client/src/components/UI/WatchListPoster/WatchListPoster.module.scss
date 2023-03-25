@@ -1,0 +1,38 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+$border: 1px solid rgb(224, 224, 224);
+
+.posterHover {
+    display: flex;
+}
+
+.watchlist_remove {
+    margin-left: 200px;
+    margin-top: -10px;
+    position: absolute;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    border: 2px solid $dark_gray;
+    height: 35px;
+    width: 35px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    text-decoration: none;
+    span {
+        height: 40px;
+        width: 40px;
+        background: url('../../../assets/svg/close.svg') no-repeat center;
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(206, 200, 200);
+    }
+}
+
+.visible {
+    display: flex !important;
+}

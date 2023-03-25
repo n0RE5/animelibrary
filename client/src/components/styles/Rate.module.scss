@@ -1,0 +1,111 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+$border: 1px solid rgb(233, 233, 233);
+
+.media_rating {
+    display: flex;
+    height: 50px;
+    width: 100%;
+
+    .rating_left {
+        display: flex;
+        align-items: center;
+        width: 130px;
+        height: 100%;
+        border-right: 1px solid rgb(200, 200, 200);
+        margin-right: 10px;
+    }
+    .rating_right {
+        display: flex;
+        height: 100%;
+        width: 500px;
+        .setRate {
+            display: flex;
+            position: relative;
+            z-index: 3;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            height: 100%;
+            padding: 0 10px;
+            span {
+                width: 75px;
+                color: $dark_gray;
+                font-size: 14px;
+            }
+            .AnimePage_rating_user {
+                height: 40px;
+                width: 40px;
+                margin-right: 5px;
+                filter: brightness(100%) saturate(0%) contrast(100%);
+            }
+        }
+        &:hover {
+            .setRate {
+                background-color: $light_red;
+                span {
+                    color: white;
+                    div {
+                        font-size: 12px;
+                        .your_rate {
+                            text-align: center;
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .AnimePage_rating_user {
+                    filter: brightness(100%) saturate(0%) contrast(200%);
+                }
+            }
+        }
+    }
+}
+
+.AnimePage_rating {
+    height: 40px;
+    width: 50px;
+    background: url('../../assets/svg/star.svg') no-repeat center;
+}
+
+
+.stars {
+    z-index: 1;
+    transform: translateX(-40%);
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    padding: 0 10px;
+    background-color: rgb(205, 204, 204);
+    .star {
+        height: 30px;
+        width: 30px;
+        filter: brightness(100%) saturate(0%) contrast(150%);
+        &:hover {
+            filter: brightness(100%) saturate(0%) contrast(200%);
+        }
+    }
+}
+
+.active {
+    opacity: 1;
+    transition: all 1s ease;
+    transform: translateX(0);
+}
+
+.test {
+    height: 30px;
+    width: 30px;
+    filter: brightness(100%) saturate(0%) contrast(200%);
+}
+
+.rating_text {
+    margin-right: 10px;
+    div {
+        font-size: 24px;
+        color: $dark_gray;
+    }
+    div span {
+        font-size: 12px;
+        color: $dark_gray;
+    }
+}

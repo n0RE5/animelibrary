@@ -1,0 +1,33 @@
+.TagsRenderer_tags {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+	overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space:pre-wrap;
+    a {
+        color:#444;
+        &:hover {
+            color:#AAA;
+        }
+    }
+}
+
+.tags {
+    display: inline;
+}
+
+.differ {
+    margin: 0 8px;
+}
+
+.differ_right {
+    margin-right: 8px;
+}
+
+@media (min-width: 360px) and (max-width: 600px) {
+    .tags {
+        display: none;
+    }
+}

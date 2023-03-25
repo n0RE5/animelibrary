@@ -1,0 +1,226 @@
+$light_red: #ff5c57;
+$light_gray: #777;
+$dark_gray: #444;
+$border: 1px solid rgb(233, 233, 233);
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    width: 100%;
+
+    text-decoration: none;
+    &__watch {
+        background-color: $light_red;
+        border: $border;
+        color: white;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    &__comment {
+        background-color: rgb(225, 225, 225);
+        color: $dark_gray;
+        border: $border;
+        margin-bottom: 20px;
+    }
+    &__favorite {
+        border: none;
+        background-color: whitesmoke;
+        color: $dark_gray;
+        border-bottom: $border;
+        margin-bottom: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            background-color: rgb(230, 230, 230);
+        }
+    }
+    &__similar {
+        color: $light_red;
+        span {
+            border-bottom: 1px dashed;
+        }
+        &:hover span {
+            border: none;
+        }
+    }
+}
+
+.strong {
+    color: $dark_gray;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.AnimePage {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 15px;
+}
+
+.media_block_1 {
+    display: flex;
+}
+
+.media {
+    display: block;
+    margin-right: 25px;
+    width: 250px;
+    min-width: 250px;
+}
+
+.media_img {
+    width: 250px;
+    height: 350px;
+}
+
+.media_info {
+    width: calc(100% - 270px);
+    display: block;
+    hr {
+        border-top: 1px solid rgb(225, 225, 225);
+        margin: 30px 0;
+    }
+}
+
+.media_panel {
+    margin-top: 15px;
+    border: $border;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.AnimePage_title {
+    font-weight: 700;
+    color: #222;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.AnimePage_japanese_title {
+    font-weight: 300;
+    font-size: 12px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.AnimePage_japan_title {
+    font-weight: 300;
+    font-size: 12px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.AnimePage_button {
+    display: inline-block;
+    padding: 1px 6px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 1px 2px 0px #c8c8c8;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.media_block_3 {
+    display: flex;
+}
+
+.AnimePage_gallery {
+    display: block;
+    width: 100%;
+}
+
+.AnimePage_trailer {
+    display: block;
+}
+
+.AnimePage_description {
+    margin: 30px 0;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+}
+
+.AnimePage_images {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media (min-width: 360px) and (max-width: 689px) {
+    .media_block_1 {
+        flex-direction: column;
+    }
+    .media {
+
+        margin-bottom: 10px;
+    }
+    .media_info {
+        width: 100%;
+        margin: 0;
+    }
+    .AnimePage_images {
+        display: flex;
+        :nth-child(2) {
+            display: none;
+        }
+        :nth-child(3) {
+            display: none;
+        }
+        :nth-child(4) {
+            display: none;
+        }
+    }
+}
+
+@media (min-width:690px) and (max-width: 1089px) {
+    .AnimePage_images {
+        display: flex;
+        justify-content: left;
+        :only-child {
+            margin-right: 20px;
+        }
+        :nth-child(3) {
+            display: none;
+        }
+        :nth-child(4) {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 1090px) and (max-width: 1230px) {
+    .AnimePage_images {
+        display: flex;
+        justify-content: space-between;
+
+        :nth-child(4) {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 1231px) and (max-width: 1600px) {
+    .AnimePage_images {
+        display: flex;
+        justify-content: left;
+        :only-child {
+            margin-right: 20px;
+        }
+        :nth-child(3) {
+            display: none;
+        }
+        :nth-child(4) {
+            display: none;
+        }
+    }
+}
