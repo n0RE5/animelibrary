@@ -37,7 +37,7 @@ export const removeAnimeListItem = async(id: number) => {
 }
 
 export const getAnimeFromList = async (animeListId) => {
-    const response = await $host.get(`api/animeListItem/${animeListId}`)
-    response.data.rows.filter(item => item.animeitem.id !== null)
-    return response.data.rows.map(item => item.animeitem)
+    const response = await $host.get(`api/animeListItem/${animeListId}`)       
+    const filtered = response.data.rows.filter(item => item.animeitem !== null)
+    return filtered.map(item => item.animeitem)
 }
