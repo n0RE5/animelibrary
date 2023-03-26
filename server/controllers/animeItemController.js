@@ -74,6 +74,18 @@ class AnimeItemController {
         })
         return res.json(anime)
     }
+
+    async remove(req, res, next) {
+        const {id} = req.params
+        
+        if(isNaN(id)) {
+            return next(ApiError.badRequest("ID Is not a number"))
+        }
+
+        const anime = await animeitem.destroy({where: {id}})
+
+        return res.json(anime)
+    }
 }
 
 module.exports = new AnimeItemController()
