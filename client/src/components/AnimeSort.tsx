@@ -15,19 +15,22 @@ const AnimeSort: React.FC<AnimeSortProps> = ({animeList, setSortedList}) => {
     const optionsSortList = optionsSortTypes;
 
     const sortAnimeList = () => {
-        if (selectedSort === sortTypes.withName) {
-           return setSortedList([...animeList].sort((a: AnimeItemI, b: AnimeItemI) => a.title.toLocaleLowerCase().localeCompare(b.title.toLocaleLowerCase())))
+        switch (selectedSort) {
+            case sortTypes.withName:
+                setSortedList([...animeList].sort((a: AnimeItemI, b: AnimeItemI) => a.title.toLocaleLowerCase().localeCompare(b.title.toLocaleLowerCase())))
+                break;
+            case sortTypes.withDate:
+                setSortedList([...animeList].sort((a: AnimeItemI, b: AnimeItemI) => Number(b.year) - Number(a.year)))
+                break;
+            case sortTypes.withRating:
+                setSortedList([...animeList].sort((a: AnimeItemI, b: AnimeItemI) => Number(b.rating) - Number(a.rating)))
+                break
+            default:
+                setSortedList([...animeList])
+                break;
         }
-    
-        if (selectedSort === sortTypes.withDate) {
-           return setSortedList([...animeList].sort((a: AnimeItemI, b: AnimeItemI) => Number(b.year) - Number(a.year)))
-        }
-    
-        if (selectedSort === sortTypes.withRating) {
-            return setSortedList([...animeList].sort((a: AnimeItemI, b: AnimeItemI) => Number(b.rating) - Number(a.rating)))
-        }
-        return setSortedList([...animeList])
     }
+
 
     useEffect(() => sortAnimeList(), [selectedSort])
 
