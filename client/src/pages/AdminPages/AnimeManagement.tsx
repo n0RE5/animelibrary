@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createAnimeList, insertAnimeListItem, getAnimeFromList, removeAnimeListItem } from '../../http/animeAPI';
+import { createAnimeList, insertAnimeListItem, getAnimeFromList, removeAnimeListItem, destroyAnime } from '../../http/animeAPI';
 import classes from '../styles/AdministratorPage.module.scss'
 
 
@@ -51,6 +51,18 @@ const AddAnimeList: React.FC = () => {
         }
     }
 
+    const destroy = async () => {
+        try {
+            if(!animeItemId || animeItemId === 0) {
+                return setMessage("Не указан Идентификатор [ID] Аниме")
+            }
+            const res = await destroyAnime(animeItemId)
+            setMessage("Вы удалили аниме")
+        } catch (e: any) {
+            setMessage(e.response?.data?.message)
+        }
+    }
+
     return (
         <div className={classes.AP_body}>
             <div className={classes.media_info}>
@@ -77,7 +89,8 @@ const AddAnimeList: React.FC = () => {
                     <button className={classes.add_button} onClick={addList}>Создать новый список</button>
                     <button className={classes.add_button} onClick={add}>Добавить аниме в список</button>
                     <button className={classes.add_button} onClick={get}>Получить аниме из списка (консоль)</button>
-                    <button className={classes.add_button} onClick={remove}>Удалить аниме из списка (ID в базе данных)</button>  
+                    <button className={classes.add_button} onClick={remove}>Удалить аниме из списка (ID в базе данных)</button>
+                    <button className={classes.add_button} onClick={destroy}>Удалить аниме</button>
             </div>
         </div>
     );
